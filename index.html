@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>남켓몬 안내서</title>
+<meta name="description" content="남켓몬 공략집 · 도감 · 타운맵">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gowun+Dodum&display=swap">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+:root{--bg:#eef1ec;--paper:#fbfcf9;--ink:#1e2a26;--muted:#5d6a64;--line:#d2dad3;--window:#f4f1e6;--accent:#d0353d;--blue:#2e5cb2;--gold:#c99a2e;
+  --f-display:"Do Hyeon","Gowun Dodum",system-ui,sans-serif;--f-body:"Gowun Dodum",system-ui,sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a18;--paper:#1c2421;--ink:#e3ebe6;--muted:#9aa8a1;--line:#33413b;--window:#232c29;--accent:#ef5a5f;--blue:#6f97e8;--gold:#e0b84e;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141a18;--paper:#1c2421;--ink:#e3ebe6;--muted:#9aa8a1;--line:#33413b;--window:#232c29;--accent:#ef5a5f;--blue:#6f97e8;--gold:#e0b84e;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--f-body)}
+.wrap{max-width:1040px;margin:0 auto;padding:24px 16px 64px}
+h1{font:400 clamp(40px,7vw,64px)/1.05 var(--f-display);margin:8px 0 10px}h1 span{color:var(--accent)}
+h2{font:400 30px/1.2 var(--f-display);margin:6px 0 14px}h3{font:400 22px/1.25 var(--f-display);margin:0 0 6px}
+.kicker{font-size:13px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.lead{font-size:17px;max-width:760px}
+section{margin-top:44px}.tab{display:inline-block;font-size:13px;background:var(--ink);color:var(--bg);padding:2px 10px;border-radius:3px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.steps{list-style:none;padding:0;margin:0;counter-reset:s;display:grid;gap:10px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start}
+.steps li::before{content:counter(s);font:400 24px/44px var(--f-display);text-align:center;background:var(--window);border:1px solid var(--line);border-radius:50%;width:44px;height:44px}
+.steps li.g::before{background:var(--accent);color:#fff;border-color:var(--accent)}
+.steps b{font-family:var(--f-display);font-weight:400;font-size:20px}
+.steps .gl{display:inline-block;margin-left:6px;font-size:13px;color:#fff;background:var(--accent);border-radius:3px;padding:0 6px;vertical-align:2px}
+.steps .ic{display:flex;gap:6px;margin-top:6px}
+.mon{display:inline-grid;justify-items:center;font-size:12px;color:var(--muted);min-width:64px}
+.mon img{width:56px;height:56px;image-rendering:pixelated}
+.chip{display:inline-block;color:#fff;font-size:12px;line-height:1;padding:4px 7px;border-radius:3px;margin:0 3px 3px 0;text-shadow:0 1px 1px rgba(0,0,0,.35)}
+.gym{display:grid;grid-template-columns:96px 1fr;gap:14px}
+.tr{width:96px;height:96px;background:var(--window);border-radius:4px;overflow:hidden}
+.tr span{display:block;width:100%;height:100%;background-repeat:no-repeat;image-rendering:pixelated}
+.tr .a12{background-size:1200% 100%;animation:nkplay 1.2s steps(12,jump-none) infinite}.tr .a1{background-size:100% 100%}
+@keyframes nkplay{from{background-position:0% 0}to{background-position:100% 0}}
+@media (prefers-reduced-motion:reduce){.tr .a12{animation:none}}
+.gym .meta{font-size:14px;color:var(--muted)}
+.gym ul{margin:6px 0 0;padding-left:18px;font-size:15px}
+.gym .team{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0}
+.tip{font-size:14px;margin-top:6px}.tip b{font-weight:700}
+.open{font-size:14px;background:var(--window);border-left:3px solid var(--gold);padding:4px 8px;margin:6px 0}
+table{border-collapse:collapse;width:100%;font-size:15px}th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}th{font-weight:700;white-space:nowrap}
+.tblwrap{overflow-x:auto}
+.tt{font-size:13px;border-collapse:collapse;width:auto}.tt th,.tt td{border:1px solid var(--line);padding:0;width:30px;height:28px;text-align:center}
+.tt th{font-weight:400;font-size:12px;padding:2px}.tt thead th{writing-mode:vertical-rl;height:52px}
+.x2{background:#3aa55d;color:#fff;font-weight:700}.x05{background:#e8a23a;color:#fff}.x0{background:#555;color:#fff}
+.pick{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.pick button{font:inherit;font-size:14px;border:0;border-radius:4px;padding:6px 10px;color:#fff;cursor:pointer;opacity:.75}
+.pick button[aria-pressed="true"]{opacity:1;outline:3px solid var(--ink);outline-offset:1px}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+.res h4{margin:0 0 6px;font:400 18px var(--f-display)}
+details{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:10px 14px}summary{cursor:pointer;font-family:var(--f-display);font-size:20px}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+kbd{display:inline-block;background:var(--window);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 6px;font:13px/1.6 var(--f-body)}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+#gymcards,#lg{grid-template-columns:repeat(auto-fill,minmax(min(100%,440px),1fr))}
+@media (max-width:560px){.gym{grid-template-columns:1fr}.tr{width:80px;height:80px}}
+.hubc{display:block;color:inherit;text-decoration:none;transition:transform .15s}.hubc:hover{transform:translateY(-2px);border-color:var(--accent)}.hubc h3{color:var(--accent)}</style>
+<style>
+.booknav{position:sticky;top:0;z-index:50;display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center;padding:8px 16px;background:#1f2b3b;font:15px "Gowun Dodum",system-ui,sans-serif}
+.booknav a{color:#e9eef5;text-decoration:none;padding:5px 10px;border-radius:6px}
+.booknav a[aria-current]{background:#d0353d;color:#fff}
+.booknav a:hover{background:#33465e}
+.booknav .play{margin-left:auto;background:#3a62c8;color:#fff}
+</style>
+</head>
+<body>
+<nav class="booknav" aria-label="남켓몬 안내서"><a href="index.html" aria-current="page">처음</a><a href="guide.html">공략집</a><a href="dex.html">도감</a><a href="townmap.html">타운맵</a><a class="play" href="../namketmon/">게임 하러 가기 ▶</a></nav>
+<div class="wrap">
+<header style="text-align:center">
+  <div class="kicker">Namketmon · Yongseong region · game v2.48</div>
+  <h1>남켓몬 <span>안내서</span></h1>
+  <p class="lead" style="margin:0 auto">남원(용성지방)을 모험하는 남켓몬 게임의 공략집·도감·타운맵이에요.</p>
+  <div style="display:flex;justify-content:center;gap:10px;margin-top:12px"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAADAFBMVEX169Sz5XCKSXOIe2pcHUYqGxYbGyr3nMbwaqXo2LTQwqzMSo+xno2f1lqKvlGGKmOCbll2tj5qVkVYmC1LOClEeCU7KCAuVhkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdrWG3AAAAGXRSTlP///////////////////////////////8AATQKtwAAAcdJREFUeNrt1tmWgyAMBmCXoi2jlYAQ3/9JJwGXmYoDbc+c3piLbsf/a4LWUkxvVnECJ3ACJ3ACaaB6E6jay2eBqm0zhWOg+rq8DgzXiipLOAKuX1SfBZh4A/AtDC8DiDBQ3iL6t5bqKQABwA4DxQxyvCz7Hm0+gGCMJQTRGIMUZ4CIfIBi3AQTCOUCUBOxWWJAiPc9DQKw5vvev8I0YMuQJyEA/U/gUYgBfYj7Frb4UoBpYD2WWtjl00A9Fx1rdgB9lgLqYq5aUT0PqGKtWkqpngVUoVTTcLyRdbcXUoAqbjdVMNA0UkaGSAA+L5sVgOWK2PJg73gIhPwKdAdAiYfAresI4BWg6Tm/W0I6s/f7ITBprdtWhuraNgKYv4GgyJGqq48aAEzdULSWPh4DHvMH90StIZIPJxHz/hsxEvctZNwPJuccCb9isK6BSXfglNJi+1EDLOPwk0l3wHlNAm55Y2Zl30AMoLgexeS2uLEWlldZAF0GwinnfMg5Y8eRCYZITq6B4OtI8CCO80o7x59Yw1AOMAkqHmR09KXckCcdIj2I3D3SPAgKvyAiRAnO3+aJ0K6HRDSa2mjOGbEf+8mdqhD/u9X9Bv/UV/ivxZB5AAAAAElFTkSuQmCC" alt="몽쭉이" style="width:96px;height:96px;image-rendering:pixelated"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAADAFBMVEX+yXP5s1v0ayvZNwzTgTrSaymMFwdaGwkpGRD/0jr98Of1mknyeorwijrMWh24RhS1Wi2pPA+ONhGLSCOHLA15HgZXDAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACsfeCmAAAAGHRSTlP//////////////////////////////wDNEy7qAAABv0lEQVR42u3W2XKDMAwFUEwMgibGibzw/39aSXZTKBAc+tLOoAezTO5BmC3V+MuqTuAETuAETuAE/hGAUocBREV1vQIeAlKcASIOADku+anQlgHOTeMsuJyvYwngqsrNS6ncRPwhbALzUkrDegsbgFpUBlpTAoTrUtAaQuAG+rlQreaXgNbONk1k4LIHUL5xHKFSz0GAJramn7dQreYbp/Wd5l5GndYTYOq+n/WwASAFGnYcD3carQChruf5JSB5i/TjrutEoSXtsUiADZca29dzEChPAAkfXcfrV1pKXoC2bS28BjhvA8qRGeAl5TNgqQqAMAx8Erl9Pv4wBIHLACRgwDwPFOM8CZT3Vu8BY7ScVyoRfETkvDFDCEXAGGMkgAJM3G4Sp7zsKALG0XM+JXLlzYfnhnYBT/e+MRPia/1BAM7zawDnv4BJDdIAAuy9kTbyaQYQ9l+qfj0vwDK/Bpj14lOAsRB4TtwRYITJzE+vBV2EMiAJ5ruRZ74UGAHgGUy9p4LyT5v36cZJAN1AVKv5DQC09ik3pDx/5eGNjyvc7+gpjuilfQHiWwAFJOXl3OFdgB/pCDJwpe2/+ifrE3zORTX43WmLAAAAAElFTkSuQmCC" alt="불삽이" style="width:96px;height:96px;image-rendering:pixelated"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAADAFBMVEX29ezHt3WrpW+plWSZk1GSg0WIeTs9MxgbGyrzmrjx5qGupFqjmlJzZC9lVClbUipFOBgyJhErHAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABiONpFAAAAFHRSTlP/////////////////////////AE9P5xEAAAF8SURBVHja7ZbrkoMgDIVFl1C3JAT6/u+6CdBWu9aK/csZZ7DjnC/hktDh9qWGDuiADuiADuiADjgMYNUXALbWAsTTACIQEfE5AJExlHVFOgEgg6boKuJmAC3cHwjDG38QFXN+4yaA+FGjZ0LBWG4EGDNcLtmaR9sIUOOlAnS05wDD9T7aHcLBDBCbAQtJfGycwjyv/POM7WuwCC8ToCZAlArI68b6iF/qKj0/u0+AWIooI0p4kqJ8ENy6wocNf0paxmrNqnWd7n7EuAeQ+CkAKaJKXsE/clDAkrABSBzJa9BakkYIXoGRKyDsAW6JSRPw/u43v15+s6YSi38fwJoze/+7EAHnOQkA1wls7oIC4B9AOnS8hfCSwBaAtZOuAIYAJQVwYRylvXD8dJDiKwAw6KrCOI6w9r/piTKLJ0CWERXwk0UuHunKrmxidhszVb8upDt4L7jnMZimOgG1u8M3k2z4pOap+MuhdC1Xm3MEpRbcQ63X+1tX/4uz0h/mCxZ3CpdlKgAAAABJRU5ErkJggg==" alt="꼬꾸리" style="width:96px;height:96px;image-rendering:pixelated"></div>
+</header>
+<div class="grid2" style="margin-top:28px">
+  <a class="card hubc" href="guide.html"><h3>공략집 →</h3><p>모험 순서, 배움터 8곳의 장치와 관장, 타입 상성, 진화의 비밀, 숨은 재미.</p></a>
+  <a class="card hubc" href="dex.html"><h3>남켓몬 도감 →</h3><p>154종의 생김새·이로치·도감 설명·능력치·특성·기술·사는 곳.</p></a>
+  <a class="card hubc" href="townmap.html"><h3>용성지방 타운맵 →</h3><p>전통 색이름 마을·시티 11곳, 번호 도로 17개, 명소와 굴, 리그.</p></a>
+  <a class="card hubc" href="../namketmon/" style="border-color:var(--blue)"><h3>게임 하러 가기 ▶</h3><p>설치 없이 브라우저에서 바로. 컴퓨터는 키보드, 태블릿은 화면 단추로.</p></a>
+</div>
+<footer>덕과초등학교 비공식 교육용 팬게임 · Pokémon은 Nintendo · Creatures · GAME FREAK · The Pokémon Company의 상표이며 남켓몬은 이 회사들과 관계가 없어요.</footer>
+</div>
+</body>
+</html>
